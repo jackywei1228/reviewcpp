@@ -1,4 +1,4 @@
-.PHONY : all clean selectserver selectclient client server
+.PHONY : all clean selectserver selectclient client server mutextest
 
 all: client server selectserver selectclient
 	@echo all
@@ -15,6 +15,9 @@ selectserver:
 selectclient:
 	g++ -pthread selectclient.cpp -o selectclient -Wall -g
 
+mutextest:
+	g++ -pthread mutextest.cpp -o mutextest -Wall -g
+
 clean:
-	rm client server selectclient selectserver
+	rm client server selectclient selectserver mutextest
 
