@@ -19,10 +19,8 @@ void *thread(void *v) {
 }
 
 main() {
-
 	char cmd[1024];
 	pthread_t *t;
-
 
 	printf("Type lock to run a thread that locks and waits.\n");
 	printf("Type unlock to unlock the same thread.\n");
@@ -33,6 +31,5 @@ main() {
 		} else if(strcmp(cmd, "unlock") == 0) {
 			pthread_cond_signal(&cv);
 		}
-	}	
-
+	}
 }
